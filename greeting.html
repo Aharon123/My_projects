@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ברכת בוקר</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    .file-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.2s ease;
+    }
+
+    .file-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .file-icon:active {
+      transform: scale(0.95);
+    }
+
+    .file-svg {
+      width: 80px;
+      height: 100px;
+      filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+    }
+
+    .file-label {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+      font-weight: bold;
+    }
+
+    .greeting-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .greeting-overlay.show {
+      display: flex;
+    }
+
+    .greeting-box {
+      background: white;
+      border-radius: 20px;
+      padding: 50px 60px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.5); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+
+    .greeting-emoji {
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+
+    .greeting-text {
+      font-size: 36px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .close-btn {
+      margin-top: 10px;
+      padding: 10px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background: #fcb69f;
+      color: #333;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    .close-btn:hover {
+      background: #f9a07a;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- File icon to click -->
+  <div class="file-icon" onclick="showGreeting()" title="לחץ עליי!">
+    <svg class="file-svg" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="0,0 55,0 80,25 80,100 0,100" fill="#fff8e1" stroke="#f0c040" stroke-width="3"/>
+      <polygon points="55,0 55,25 80,25" fill="#f0c040"/>
+      <rect x="15" y="40" width="50" height="5" rx="2" fill="#f0c040"/>
+      <rect x="15" y="53" width="50" height="5" rx="2" fill="#f0c040"/>
+      <rect x="15" y="66" width="35" height="5" rx="2" fill="#f0c040"/>
+    </svg>
+    <span class="file-label">greeting.txt</span>
+  </div>
+
+  <!-- Greeting popup -->
+  <div class="greeting-overlay" id="overlay" onclick="hideGreeting()">
+    <div class="greeting-box" onclick="event.stopPropagation()">
+      <div class="greeting-emoji">☀️</div>
+      <div class="greeting-text">בוקר טוב עדן!</div>
+      <button class="close-btn" onclick="hideGreeting()">סגור</button>
+    </div>
+  </div>
+
+  <script>
+    function showGreeting() {
+      document.getElementById('overlay').classList.add('show');
+    }
+
+    function hideGreeting() {
+      document.getElementById('overlay').classList.remove('show');
+    }
+
+    // Also close with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') hideGreeting();
+    });
+  </script>
+
+</body>
+</html>
