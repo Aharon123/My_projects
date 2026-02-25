@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">גלריית תמונות</string>
+    <string name="select_images">בחר תמונות</string>
+    <string name="clear_all">נקה הכל</string>
+    <string name="no_images_selected">לא נבחרו תמונות</string>
+    <string name="images_selected">%d תמונות נבחרו</string>
+    <string name="permission_required">נדרשת הרשאה לגישה לגלריה</string>
+    <string name="tap_to_select">לחץ על \'בחר תמונות\' להוספת תמונות לגלריה</string>
+    <string name="remove_image">הסר תמונה</string>
+    <string name="full_screen_image">תמונה במסך מלא</string>
+    <string name="back">חזור</string>
+    <string name="zoom_hint">פנץ\' לזום • דאבל טאפ לאיפוס</string>
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <!-- תמונה במסך מלא -->
+    <ImageView
+        android:id="@+id/ivFullScreenImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:contentDescription="תמונה במסך מלא" />
+
+    <!-- פקדים עליונים -->
+    <LinearLayout
+        android:id="@+id/topControls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#80000000"
+        android:padding="8dp">
+
+        <!-- כפתור חזרה -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_arrow_back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="@android:color/white"
+            android:contentDescription="חזור" />
+
+        <!-- מספר תמונה -->
+        <TextView
+            android:id="@+id/tvImageNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAlignment="center" />
+
+        <!-- ריווח -->
+        <View
+            android:layout_width="48dp"
+            android:layout_height="48dp" />
+
+    </LinearLayout>
+
+    <!-- רמז זום -->
+    <TextView
+        android:id="@+id/tvZoomHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="32dp"
+        android:text="פנץ' לזום • דאבל טאפ לאיפוס"
+        android:textColor="#AAFFFFFF"
+        android:textSize="12sp"
+        android:background="#60000000"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="6dp" />
+
+</FrameLayout>
