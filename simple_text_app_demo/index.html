@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Text App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <span class="title">Simple Text App</span>
+            <div class="buttons">
+                <button class="title-button">_</button>
+                <button class="title-button">□</button>
+                <button class="title-button close">✕</button>
+            </div>
+        </div>
+
+        <div class="menu-bar">
+            <span class="menu-item">קובץ</span>
+            <span class="menu-item">עריכה</span>
+            <span class="menu-item">תצוגה</span>
+            <span class="menu-item">עזרה</span>
+        </div>
+
+        <div class="content">
+            <textarea id="textArea" placeholder="כתוב או הדבק טקסט כאן..."></textarea>
+        </div>
+
+        <div class="status-bar">
+            <span id="charCount">תווים: 0</span>
+            <span id="wordCount">מילים: 0</span>
+            <span id="lineCount">שורות: 1</span>
+        </div>
+
+        <div class="button-group">
+            <button id="clearBtn" class="btn btn-primary">נקה טקסט</button>
+            <button id="sampleBtn" class="btn btn-secondary">טעון דוגמה</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
